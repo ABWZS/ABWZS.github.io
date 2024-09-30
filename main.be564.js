@@ -15,12 +15,10 @@ window.boot = function () {
         onProgress = function (finish, total) {
             var percent = 100 * finish / total;
             if (progressBar) {
-                progressBar.style.width = `rotate(${5 * percent}deg)`;
-                // progressBar.style.width = percent.toFixed(2) + '%';
+                progressBar.style.transform = `rotate(${5 * percent}deg)`;
             }
         };
         splash.style.display = 'block';
-        // progressBar.style.width = '0%';
 
         cc.director.once(cc.Director.EVENT_AFTER_SCENE_LAUNCH, function () {
             splash.style.display = 'none';
